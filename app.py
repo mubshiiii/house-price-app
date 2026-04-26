@@ -1,10 +1,16 @@
 import streamlit as st
 
-st.title("House Price Prediction - Mubshir")
+st.title("🏠 House Price Prediction System")
 
-area = st.number_input("Enter Area (sq ft)")
+st.subheader("Enter Property Details")
+
+area = st.number_input("Area (sq ft)")
 bedrooms = st.number_input("Bedrooms")
+bathrooms = st.number_input("Bathrooms")
+location = st.text_input("Location")
+year_built = st.number_input("Year Built")
 
-if st.button("Predict"):
-    price = area * 2000 + bedrooms * 500000
+if st.button("Predict Price"):
+    price = (area * 1500) + (bedrooms * 500000) + (bathrooms * 300000)
+
     st.success(f"Estimated Price: {price} PKR")
